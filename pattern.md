@@ -15,7 +15,7 @@ This article describes an architectural pattern for properly and reliably aggreg
 
 The Marketplace Metering Service API allows ISVs to enable Azure Marketplace offers such as Azure Managed Applications or Software-as-a-Service applications to charge for consumption, according to custom billing dimensions, as defined by the ISV. As an ISV, you need to run a system which keeps track of the consumption in your application and submits the relevant usage to the Azure Metering Service, in an aggregated and timely fashion. 
 
-> *Aggregated* means that you must cannot submit overage usage directly when it occurs, but aggregate all usage in a given hour. *Timely* refers to the fact that you ideally *should* submit usage in the hour after it occurred, but no later than 24 hours after the fact. According to the [FAQ](https://docs.microsoft.com/en-us/azure/marketplace/marketplace-metering-service-apis-faq), "*the best practice is to collect hourly usage and to emit is as one event at the end of the hour.*"
+> *Aggregated* means that you cannot submit overage usage directly when it occurs, but aggregate all usage in a given hour. *Timely* refers to the fact that you ideally *should* submit usage in the hour after it occurred, but no later than 24 hours after the fact. According to the [FAQ](https://docs.microsoft.com/en-us/azure/marketplace/marketplace-metering-service-apis-faq), "*the best practice is to collect hourly usage and to emit is as one event at the end of the hour.*"
 
 Your ISV solution report to the metering API that a certain customer subscription in the marketplace (who), consumed a specific amount of units (how much), of a certain billing dimension (what), in a given hour (when). A sample usage record might look like this:
 
